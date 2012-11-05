@@ -286,6 +286,12 @@ aarch64*-*-elf)
 	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
 	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp"
 	;;
+aarch64*-*-freebsd*)
+	# XXX andrew@freebsd.org: Check the unwind format
+	md_unwind_header=aarch64/linux-unwind.h
+	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
+	tmake_file="${tmake_file} ${cpu_type}/t-softfp t-softfp"
+	;;
 aarch64*-*-linux*)
 	md_unwind_header=aarch64/linux-unwind.h
 	tmake_file="${tmake_file} ${cpu_type}/t-aarch64"
